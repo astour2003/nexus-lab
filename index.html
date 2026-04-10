@@ -1971,7 +1971,7 @@ async function sendToSharePoint(reservation) {
 
   // 2) Construire la ligne SharePoint
   const payload = {
-    "__metadata": { "type": "SP.Data.Réservations_NexusListItem" },
+    "__metadata": { "type": "SP.Data.Reservations_NexusListItem" },
     "Title":             reservation.code,
     "Stagiaire_Nom":     reservation.member,
     "Stagiaire_Email":   reservation.userEmail,
