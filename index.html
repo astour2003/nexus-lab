@@ -1952,7 +1952,9 @@ async function sendToSharePoint(reservation) {
   const TENANT = "capgemini.sharepoint.com";
   const SITE   = "/sites/NEXUSProject";
   const LIST   = "Réservations_Nexus";
-  const url    = `https://${TENANT}${SITE}/_api/web/lists/getbytitle('${LIST}')/items`;
+  
+  const url = `https://${TENANT}${SITE}/_api/web/lists/getbytitle('${LIST}')/items`;
+
 
   // 1) Obtenir le digest (token sécurité)
   const digestResp = await fetch(`https://${TENANT}${SITE}/_api/contextinfo`, {
@@ -1998,8 +2000,7 @@ async function sendToSharePoint(reservation) {
   }
   return await resp.json();
 }
-
-// ===================== FINALIZE =====================
+/// ===================== FINALIZE =====================
 function finalizeReservation() {
   const pName = document.getElementById('project-name').value || 'Mon Projet';
   const pSlogan = document.getElementById('project-slogan').value || 'Nexus Lab · Capgemini Engineering';
