@@ -1948,12 +1948,15 @@ function nextMonth() {
 // ================================================
 // ✅ ENVOI VERS SHAREPOINT – VERSION FINALE
 // ================================================
+
 async function sendToSharePoint(reservation) {
+
   const TENANT = "capgemini.sharepoint.com";
-  const SITE   = "/sites/NEXUSProject";
-  const LIST   = "Réservations_Nexus";
-  
-  const url = `https://${TENANT}${SITE}/_api/web/lists/getbytitle('${LIST}')/items`;
+  const SITE = "/sites/NEXUSProject";
+  const LIST = "Reservations_Nexus";
+
+  const url = `https://${TENANT}${SITE}/_api/web/lists/getbytitle('${LIST}')/items`
+
 
 
   // 1) Obtenir le digest (token sécurité)
